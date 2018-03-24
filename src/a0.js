@@ -47,8 +47,51 @@ RemoveP = () => {
 
 
 // A0.4 - przestaw miejscami tak zeby było C, B, A
+
+changePlace = () => {
+    const DivA = document.querySelectorAll('div')[0];
+   
+    const DivC = document.querySelectorAll('div')[2];
+    const body = document.querySelector('body');
+    body.replaceChild(DivC, DivA);
+    body.appendChild(DivA);
+}
 // A0.5 - wstaw diva D na koniec
+
+a05 = () => {
+    const divA = document.querySelector('div');
+    const divD = divA.cloneNode(true);
+    divD.firstElementChild.innerText = 'D';
+    divD.lastElementChild.innerText = 'I am div D';
+    const body = document.querySelector('body');
+    body.appendChild(divD);
+  }
+
 // A0.6 - wstaw diva Z przed A
+
+a06 =() => {
+    const divA = document.querySelector('div');
+    const divZ = divA.cloneNode(true);
+    divZ.firstElementChild.innerText = 'Z';
+    divZ.lastElementChild.innerText = 'I am div Z';
+    const body = document.querySelector('body');
+    body.insertBefore(divZ,divA);
+
+
+}
 // A0.7 - wstaw diva z napisem Brake pomiędzy A i B oraz B i C
+
+insertBrake = () => {
+    const brakeDiv = document.createElement('div');
+    brakeDiv.innerHTML = '<b>Brake</b>';
+    const body = document.querySelector('body');
+    const divB = body.querySelectorAll('div')[1];
+    const divC = divB.nextElementSibling;
+    
+  
+    body.insertBefore(brakeDiv, divB);
+    body.insertBefore(brakeDiv.cloneNode(true), divC);
+   
+  }
 // A0.8 - wstaw do srodka diva B liste <ul></ul>
 // A0.9 - wstaw do diva C sklonowane divy A, B, C
